@@ -1,6 +1,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+// import "dotenv/config"
 
 const config: Config = {
   title: "Thor Docs",
@@ -8,7 +9,9 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://thor-electronics.ir", // todo: .com?
+  url: "https://docs.thor-electronics.ir",
+  // url: "https://thor-electronics.ir", // todo: .com?
+  // baseUrl: "/docs",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -17,6 +20,8 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Thor-Electronics", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
+  // deploymentBranch: "gh-pages",
+  trailingSlash: true, // wtf is this?
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -52,7 +57,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"], // todo: fa
+    locales: ["en", "fa"],
   },
 
   presets: [
@@ -65,16 +70,16 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/troweb/documentation/tree/main/",
           // "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          routeBasePath: "/docs",
+          routeBasePath: "/", // /docs
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/troweb/documentation/tree/main/",
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl: "https://github.com/troweb/documentation/tree/main/",
+        // },
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -96,9 +101,9 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Get Started",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        // { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/Thor-Electronics/docs",
           label: "GitHub",
