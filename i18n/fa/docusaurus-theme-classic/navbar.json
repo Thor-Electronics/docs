@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "Thor Electronics",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "thor-electronics-documentation-logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Get Started": {
+    "message": "Get Started",
+    "description": "Navbar item with label Get Started"
+  },
+  "item.label.Concepts": {
+    "message": "Concepts",
+    "description": "Navbar item with label Concepts"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

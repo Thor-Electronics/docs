@@ -58,6 +58,12 @@ const config: Config = {
   i18n: {
     defaultLocale: "en",
     locales: ["en", "fa"],
+    localeConfigs: {
+      fa: {
+        direction: "rtl",
+        // htmlLang: "fa-IR",
+      },
+    },
   },
 
   presets: [
@@ -73,6 +79,8 @@ const config: Config = {
           routeBasePath: "/", // /docs
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
+          editLocalizedFiles: true,
+          editCurrentVersion: true,
         },
         // blog: {
         //   showReadingTime: true,
@@ -103,10 +111,19 @@ const config: Config = {
           position: "left",
           label: "Get Started",
         },
+        {
+          position: "left",
+          label: "Concepts",
+          to: "/concepts",
+        },
         // { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/Thor-Electronics/docs",
           label: "GitHub",
+          position: "right",
+        },
+        {
+          type: "localeDropdown",
           position: "right",
         },
       ],
