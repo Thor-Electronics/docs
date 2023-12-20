@@ -1,1 +1,27 @@
-CONCEPTS
+---
+title: Concepts
+---
+
+![tree-overview](tree-overview.png)
+
+## Overview
+
+As a developer, understanding the system is crucial when it comes to developing on the platform. Concepts are considered best steps to get to know the environment. We'll discuss few important concepts and deep dive into the core logic of the network.
+{/* ![concept-overview](concepts-overview.png) */}
+
+## Device
+
+Whether it's a microprocessor or not, clients that connect to the service, are devices. Each device has a **State** stored in the system which can be updated in real-time through the network.
+![device](device-with-state.png)
+{/* ![device](device.png) */}
+
+## Group
+
+A set of devices is called a group like a building, a room, a factory, a farm, a city, etc. Groups can hold multiple devices or sub-groups. Let's say a person has their home in an apartment. The apartment's a group including sub-groups and devices. Each room in a house is a sub-group of the house containing IoT devices in it. Actually groups are collections of devices that are somehow related to each other.
+![group](group.png)
+
+## Dashboard
+
+A dashboard is the area where user can manage their groups and control their devices. A dashboard is always created for each user by the system while the signup. It refers both to the UI and the abstract concept itself.
+
+![dashboard](groups.png)
