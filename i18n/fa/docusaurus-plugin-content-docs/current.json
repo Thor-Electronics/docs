@@ -6,5 +6,9 @@
   "sidebar.tutorialSidebar.category.concepts": {
     "message": "concepts",
     "description": "The label for category concepts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.index": {
+    "message": "index",
+    "description": "The label for category index in sidebar tutorialSidebar"
   }
 }

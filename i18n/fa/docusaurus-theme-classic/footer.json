@@ -13,7 +13,7 @@
   },
   "link.item.label.Tutorial": {
     "message": "Tutorial",
-    "description": "The label of footer link with label=Tutorial linking to /docs/intro"
+    "description": "The label of footer link with label=Tutorial linking to /"
   },
   "link.item.label.Stack Overflow": {
     "message": "Stack Overflow",
@@ -33,10 +33,14 @@
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
-    "description": "The label of footer link with label=GitHub linking to https://github.com/facebook/docusaurus"
+    "description": "The label of footer link with label=GitHub linking to https://github.com/Thor-Electronics/"
   },
   "copyright": {
     "message": "Copyright © 2023 My Project, Inc. Built with Docusaurus.",
     "description": "The footer copyright"
+  },
+  "link.item.label.Instagram": {
+    "message": "Instagram",
+    "description": "The label of footer link with label=Instagram linking to https://instagram.com/thorelectronic"
   }
 }
