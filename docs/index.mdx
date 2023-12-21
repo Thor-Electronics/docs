@@ -13,8 +13,23 @@ title: Introduction
 
 # Thor IoT Cloud Platform
 
-Thor Electronics is an IoT platform providing blazing-fast cloud services and scalable networks to businesses with a variety of use cases.
+Thor Electronics is an IoT platform providing blazing-fast cloud
+services and scalable networks to businesses with a variety of use
+cases.
 
 ## Creating Account
 
+Creating a new account on Thor Electronics is pretty simple and
+straight forward:
+
+1. Head over [thor-electronics.ir/signup](https://thor-electronics.ir/signup).
+2. Enter your phone number and choose a strong password for your account.
+3. Submit the form and you're good to go.
+
 ## Obtaining API Token
+
+API tokens are necessary when it comes to connect to the IoT network.
+We can obtain an API token from Thor via API. Sending a `POST` request
+to `/api/v1/auth` with payload containing `username` and `password`,
+would result in signing in as a user and the response contains a JWT
+token.
