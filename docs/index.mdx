@@ -30,6 +30,38 @@ straight forward:
 
 API tokens are necessary when it comes to connect to the IoT network.
 We can obtain an API token from Thor via API. Sending a `POST` request
-to `/api/v1/auth` with payload containing `username` and `password`,
-would result in signing in as a user and the response contains a JWT
-token.
+to `/api/v1/auth` with payload containing account username as
+`identifier` and `password`, would result in signing in as a **user** and
+the response contains a JWT token you can use to authenticate your
+requests.
+
+:::info
+Alternatively you can login to your account via passing **email** or
+**phone number** as `identifier` instead of **username** in your
+request.
+
+```JSON title="User Login HTTP Request Body"
+{
+  "identifier": "info@thor-electronics.com",
+  "password": "mY-$ecret-p@ss"
+}
+
+// -- POST /api/v1/auth
+```
+
+:::
+
+**Devices** can sign in via `/api/v1/auth/device` endpoint, by sending
+`deviceId`, `cpuId`, `groupId`, and `ownerEmail` in the request
+payload.
+
+```JSON title="Device Login HTTP Request Body"
+{
+  "deviceId": "000000000000",
+  "cpuId": "4738274832913421438219",
+  "groupId": "000000000000",
+  "ownerEmail": "info@thor-electronics.com"
+}
+
+// -- POST /api/v1/auth/device
+```
