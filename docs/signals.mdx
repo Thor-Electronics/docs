@@ -1,0 +1,43 @@
+---
+sidebar_position: 4
+title: Signals
+---
+
+Signals specify the action of each message and control the behavior of message. Here are some signals:
+
+:::info
+Commands are marked with star ( **\*** )
+:::
+
+| Signal                | Trigger Condition                                                            | Payload Example    |
+| --------------------- | ---------------------------------------------------------------------------- | ------------------ |
+| `DEVICE_CONNECTED`    | A new device became online                                                   | `{'id': 'ID'}`     |
+| `DEVICE_DISCONNECTED` | A device went offline                                                        | `{'id': 'ID'}`     |
+| `USER_CONNECTED`      | A user became online                                                         | `{'id': 'ID'}`     |
+| `USER_DISCONNECTED`   | A user went offline                                                          | `{'id': 'ID'}`     |
+| `STATE_UPDATED`       | A device's state has been updated                                            | `{'temp': 16}`     |
+| `UPDATE_STATE`\*      | Commanding a device to update their state                                    | `{'power': false}` |
+| `INITIAL_DATA`        | Initial data for the client(User or Device) to sync the data with the server | TO_BE_ADDED        |
+| `AUTHENTICATE`        | Used for signin and authentication                                           | TO_BE_ADDED        |
+| `DEVICE_VERIFIED`     | A device has been verified by the user                                       | TO_BE_ADDED        |
+| `KEY_PRESSED`         | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `KEY_LONG_PRESSED`    | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `LOGOUT`              | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `LOGIN`               | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `RESTART`             | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `REBOOT`              | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `UPDATE_FIRMWARE`     | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `CHECK_UPDATE`        | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `TROUBLESHOOT`        | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `RESET_FACTORY`       | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `CLEAR_CACHE`         | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `CLEAR_FLASH`         | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `UPDATE_INFO`         | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `SEND_STATISTICS`     | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `SEND_LOGS`           | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `RELOAD`              | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `REFERESH_LATENCIES`  | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `SUCCESS`             | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `DONE`                | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `FAIL`                | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
+| `PLUGIN`              | TO_BE_ADDED                                                                  | TO_BE_ADDED        |
