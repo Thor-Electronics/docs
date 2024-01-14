@@ -3,10 +3,12 @@ sidebar_position: 1
 title: Introduction
 ---
 
+import logoImageUrl from "@site/static/img/logo.svg";
+
 <center>
   <img
     alt="logo"
-    src="/img/logo-blue.png"
+    src="/docs/img/logo-blue.png"
     width={250}
     style={{ marginTop: 32, marginBottom: 64 }}
   />
@@ -14,8 +16,63 @@ title: Introduction
 
 # شبکه ابری اینترنت اشیاء
 
-Thor Electronics is an IoT platform providing blazing-fast cloud services and scalable networks to businesses with a variety of use cases.
+ثور الکترونیکز(Thor Electronics)
+یک پلتفرم اینترنت اشیاء ست که خدمات
+ابری فوق سریع و مقیاس پذیر به کسب و کار هایی
+با انواع کاربری ارائه می‌دهد.
 
-## Creating Account
+## ساخت حساب کاربری
 
-## Obtaining API Token
+ساخت یک حساب کاربری جدید در شبکه ثور به راحتی انجام می‌شود:
+
+1. سری به [thor-electronics.ir/signup](https://thor-electronics.ir/signup) بزنید.
+2. شماره تلفن همراه و گذرواژه ای مناسب برگزینید.
+3. اطلاعات وارد شده را تایید کرده و همه چیز باید به خوبی پیش برود.
+
+## بدست آوردن کلید API
+
+هنگامی که سخن از اتصال به شبکه اینترنت اشیاء ثور به میان می‌آید، کلید
+API
+یک عنصر ضروریست. ما می‌توانیم یک کلید اتصال برای خود بسازیم.
+فرستادن یک درخواست
+`POST`
+به
+`/api/v1/auth`
+به همراه نام کاربری(شماره تلفن یا ایمیل) به عنوان
+`identifier`
+و گذرواژه در فیلد
+`password`
+باعث ورود به سیستم به عنوان یک کاربر می‌شود و پاسخ درخواست حاوی کلید مورد نظر
+(که نوعی JWT است)
+خواهد بود که می‌توانیم از این پس از آن برای احراز هویت درخواست ها استفاده کنیم.
+
+:::info
+Alternatively you can login to your account via passing **email** or
+**phone number** as `identifier` instead of **username** in your
+request.
+
+```JSON title="User Login HTTP Request Body"
+{
+  "identifier": "info@thor-electronics.com",
+  "password": "mY-$ecret-p@ss"
+}
+
+// -- POST /api/v1/auth
+```
+
+:::
+
+**Devices** can sign in via `/api/v1/auth/device` endpoint, by sending
+`deviceId`, `cpuId`, `groupId`, and `ownerEmail` in the request
+payload.
+
+```JSON title="Device Login HTTP Request Body"
+{
+  "deviceId": "000000000000",
+  "cpuId": "4738274832913421438219",
+  "groupId": "000000000000",
+  "ownerEmail": "info@thor-electronics.com"
+}
+
+// -- POST /api/v1/auth/device
+```

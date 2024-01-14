@@ -1,0 +1,69 @@
+---
+sidebar_position: 2
+title: Getting Started
+---
+
+# Quickly Getting Started with Thor
+
+We'll take a quick look at how we can easily and quickly start using
+the system in a flash.
+
+## Preparing the Account
+
+In order to use Thor Electronics services, we need to have an account.
+
+1. Signup for a new account at [thor-electronics.ir/signup](https://thor-electronics.ir/signup) and verify your phone number if prompted.
+2. Create a new building by clicking on the **`Create Group`** button.
+3. Add the first device on the building we've just created.
+4. Done!
+
+Now that we've set up our account, let's continue to setting up our
+development environment.
+
+## Development Environment
+
+### API Token
+
+Check out how you can
+[Obtain an API Token as a User or a Device](/#obtaining-api-token).
+
+### Connecting via Websockets
+
+Thor, accepts websocket connections on `/api/v1/control` for devices
+and `/api/v1/control/manage/{groupId}` for users. To manage a
+[group](/concepts#group)(Building or something), use the manage
+endpoint(2nd endpoint).
+
+As soon as we stablish the websocket connection, Thor sends a message
+to the client containing `AUTHENTICATE` signal.
+
+```JSON title="Authentication Signal by Thor"
+{ "signal": "AUTHENTICATE" }
+```
+
+This means Thor has accepted our connection and is now waiting for our
+[authentication API token we've obtained before](/#obtaining-api-token)
+to connect us to the proper cluster and hub.
+
+So, we need to send our API token in a message:
+
+```JSON
+{
+  "signal": "AUTHENTICATE",
+  "payload": {
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+  }
+}
+```
+
+:::caution
+Thor will cancel the connection if we don't send the API token within
+10 seconds.
+:::
+
+After we send the message, if there's no problem with the
+authentication, thor will begin to send informative messages over the
+websocket connection and connect us to the target cluster and hub.
+Otherwise, we'll receive an authentication error message which means
+there might be some problems with JSON parsing or the token might be
+invalid or expired etc.
